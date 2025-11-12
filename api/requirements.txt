@@ -1,0 +1,45 @@
+# --- Core API ---
+fastapi==0.114.1
+uvicorn[standard]==0.30.6
+python-dotenv==1.0.1
+loguru==0.7.2
+sse-starlette==2.1.0
+python-multipart
+
+
+# --- Seguridad ---
+bleach>=6.1.0
+
+
+
+# --- LangChain (versión clásica estable) ---
+openai>=1.30.0
+langchain>=0.2.7
+langchain-core>=0.2.7
+langchain-community>=0.2.7
+langchain-openai>=0.1.8
+tiktoken==0.7.0
+
+# --- Embeddings / Models ---
+transformers==4.44.0
+torch==2.3.1
+sentence-transformers==3.0.1
+qdrant-client==1.9.1
+huggingface-hub==0.23.5
+
+
+# --- PDF & Text Processing ---
+pdfplumber==0.11.3
+PyMuPDF==1.24.10
+beautifulsoup4==4.12.3
+requests>=2.31.0
+pyyaml>=6.0.0
+
+# --- Utilities ---
+pydantic==1.10.13
+numpy<2.0
+pandas==2.2.2
+
+# --- Database ---
+sqlalchemy==2.0.30
+aiosqlite==0.19.0

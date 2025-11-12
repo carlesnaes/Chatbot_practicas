@@ -1,0 +1,33 @@
+# docker-compose.yml
+
+version: "3.9"
+
+services:
+  rag_api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: rag_api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DATA_DIR=/app/data
+      - FAISS_INDEX_DIR=/app/faiss_index
+      - ALLOWED_ORIGINS=
+    volumes:
+      - ./api/app:/app/app
+      # Documentos oficiales (PDFs, normativa, etc.)
+      - ./api/app/Datos:/app/data:ro
+      # Índice FAISS persistente (embeddings)
+      - ./faiss_index:/app/faiss_index
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

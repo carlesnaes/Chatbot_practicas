@@ -1,0 +1,16 @@
+# secretos
+.env
+# artefactos grandes
+*.tar
+*.tar.gz
+*.faiss
+*.pkl
+*.db
+# cache
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+# datos voluminosos opcionales
+faiss_index/
+api/app/Datos/*.pdf

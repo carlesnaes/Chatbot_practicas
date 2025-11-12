@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Asistente de Prácticas UPV</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="upv-header">
+    <div class="logo-title">
+      <img src="imagenes/svg/logo-upv.svg" alt="Logo UPV" class="upv-logo">
+      <h1>Asistente de Prácticas UPV</h1>
+    </div>
+  </header>
+
+  <div class="floating-filters">
+    <span class="filter-instructions">
+       <strong>Filtros:</strong> Selecciona tu perfil y escuela antes de realizar tu consulta.
+    </span>
+    <div class="selectors">
+      <select id="role">
+        <option value="estudiante">👩‍🎓 Estudiante</option>
+        <option value="empresa">🏢 Empresa</option>
+      </select>
+      <select id="school">
+        <option value="ALL">General UPV</option>
+        <option value="ETSINF">ETSINF</option>
+        <option value="ETSII">ETSII</option>
+        <option value="ETSIE">ETSIE</option>
+        <option value="ETSIAMN">ETSIAMN</option>
+        <option value="ETSIADI">ETSIADI</option>
+        <option value="ETSIGCT">ETSIGCT</option>
+        <option value="ETSIT">ETSIT</option>
+        <option value="ETSA">ETSA</option>
+        <option value="EPSA">EPSA</option>
+        <option value="EPSG">EPSG</option>
+        <option value="BBAA">BBAA</option>
+        <option value="ADE">ADE</option>
+        <option value="ETSICCP">ETSICCP</option>
+        <option value="UMU">UMU</option>
+      </select>
+    </div>
+  </div>
+
+
+  <aside class="sidebar">
+    <h2>ℹ️ Sobre el asistente</h2>
+    <p>Este asistente utiliza inteligencia artificial para ayudarte con dudas sobre prácticas externas en la UPV.</p>
+    <p><strong>⚠️ Importante:</strong> Aunque se ha entrenado con información fiable, puede que ocasionalmente cometa errores. Ante cualquier duda, consulta con la unidad de prácticas de tu escuela.</p>
+
+    <h3>🔗 Enlaces útiles</h3>
+    <ul>
+      <li><a href="https://www.upv.es/contenidos/siepract/" target="_blank">🌐 Web Prácticas Externas</a></li>
+      <li><a href="https://www.upv.es/contenidos/siepract/download/18619/" target="_blank">🏫 Contacto Escuelas</a></li>
+    </ul>
+  </aside>
+
+  
+
+  <main>
+    <div class="chat-container" id="chat-container">
+      <div class="message bot-msg">
+        ¡Hola! Soy tu asistente de prácticas. ¿En qué puedo ayudarte hoy?
+      </div>
+    </div>
+
+    <div class="input-row">
+      <input type="text" id="user-input" placeholder="Escribe tu pregunta..." />
+      <button id="send-btn">Enviar</button>
+      <button id="mic-btn">🎤</button> 
+    </div>
+    <div id="timer-counter" class="timer-counter" style="display:none;"></div>
+
+
+  </main>
+
+
+  <script src="script.js?v=8"></script>
+</body>
+</html>
+
